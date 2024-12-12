@@ -1,0 +1,126 @@
+random-xs:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{}]
+          query-args: |
+            [{}]
+random-xs-clustered:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":32, "L":50, "insert_threads":16, "consolidate_threads":16}]
+          query-args: |
+            [{"Ls":50, "T":8}]
+msspacev-1M:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":50, "L":50, "insert_threads":16, "consolidate_threads":16}]
+          query-args: |
+            [{"Ls":300, "T":16},
+             {"Ls":100, "T":16}]
+msturing-1M:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":50, "L":50, "insert_threads":16, "consolidate_threads":16}]
+          query-args: |
+            [{"Ls":300, "T":16},
+             {"Ls":100, "T":16}]
+wikipedia-1M:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":32, "L":100, "insert_threads":32, "consolidate_threads":32}]
+          query-args: |
+            [
+             {"Ls":100, "T":32}]
+wikipedia-35M:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":32, "L":100, "insert_threads":32, "consolidate_threads":32}]
+          query-args: |
+            [
+             {"Ls":100, "T":32}]
+msspacev-10M:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":64, "L":50}]
+          query-args: |
+            [{"Ls":100, "T":16}]
+msturing-10M:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":64, "L":50, "insert_threads":16, "consolidate_threads":16}]
+          query-args: |
+            [{"Ls":100, "T":16}]
+msturing-10M-clustered:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":64, "L":50, "insert_threads":16, "consolidate_threads":16}]
+          query-args: |
+            [{"Ls":100, "T":16}]
+msturing-30M-clustered:
+    dagnn:
+      docker-tag: neurips23-streaming-dagnn
+      module: neurips23.streaming.dagnn.dagnn
+      constructor: dagnn
+      base-args: ["@metric"]
+      run-groups:
+        base:
+          args: |
+            [{"R":32, "L":50, "insert_threads":16, "consolidate_threads":16},
+             {"R":32, "L":70, "insert_threads":16, "consolidate_threads":16},
+             {"R":50, "L":50, "insert_threads":16, "consolidate_threads":16}]
+          query-args: |
+            [{"Ls":70, "T":16}]

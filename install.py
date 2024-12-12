@@ -57,6 +57,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     print('Building base image...')
+    if(args.algorithm == "dagnn"):
+        exit()
     if args.neurips23track != 'none':
         subprocess.check_call(
             'docker build \
